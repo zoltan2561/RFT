@@ -34,8 +34,7 @@ jobs:
           version="$version_prefix.${{github.run_number}}"
           echo "Setting artifact version to $version"
 
-      - name: Start Server
-        run: mvn spring-boot:run &
+
       -
         env:
           BASE_URL: "http://localhost:8080/books" # vagy a GitHub Actions környezetében használt URL
