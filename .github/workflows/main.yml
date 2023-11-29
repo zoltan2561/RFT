@@ -33,11 +33,7 @@ jobs:
           version_prefix=`mvn help:evaluate -Dexpression=project.version --quiet -DforceStdout --file pom.xml | awk -F. '{print $1"."$2}'`
           version="$version_prefix.${{github.run_number}}"
           echo "Setting artifact version to $version"
-          # Push version to env
-          echo "ARTIFACT_VERSION=$version" >> $GITHUB_ENV
-          # Overwrite local artifact version
-          mvn -B versions:set -DnewVersion="$version" --file pom.xml
-          mvn -B deploy --file pom.xml
+          
 
         env:
           BASE_URL: "http://localhost:8080/books" # vagy a GitHub Actions környezetében használt URL
