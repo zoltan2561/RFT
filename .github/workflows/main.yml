@@ -29,6 +29,7 @@ jobs:
         run: sleep 10s
       - name: Build and publish with Maven
         run: |
+          mvn clean install
           # Versioning setup
           version_prefix=`mvn help:evaluate -Dexpression=project.version --quiet -DforceStdout --file pom.xml | awk -F. '{print $1"."$2}'`
           version="$version_prefix.${{github.run_number}}"
