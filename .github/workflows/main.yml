@@ -23,10 +23,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Start Server
-      - run: mvn spring-boot:run &
-      - name: Wait for Server to Start
-        run: sleep 30s
+
       - name: Build and publish with Maven
         run: |
           # Versioning setup
@@ -38,7 +35,10 @@ jobs:
           # Overwrite local artifact version
           mvn -B versions:set -DnewVersion="$version" --file pom.xml
           mvn -B deploy --file pom.xml
-
+      - name: Start Server
+        run: mvn spring-boot:run &
+      - name: Wait for Server to Start
+        run: sleep 30s
         env:
           BASE_URL: "http://localhost:8080/books" # vagy a GitHub Actions környezetében használt URL
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
