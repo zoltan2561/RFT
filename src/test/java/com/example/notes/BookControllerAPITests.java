@@ -26,13 +26,13 @@ public class BookControllerAPITests {
     @Test
     public void testAddBook() {
         // Az API végpontja, amely létrehozza a könyvet
-        String endpoint = "/books/add"; // Módosítsd a helyes végpontra
+        String endpoint = "/books/add"; //
 
         // Létrehozandó könyv objektum
         Book newBook = new Book();
         newBook.setTitle("Teszt Könyv");
         newBook.setAuthor("Teszt Elek");
-        // További tulajdonságok...
+
 
         // POST kérés küldése
         Response response = given()
@@ -42,9 +42,9 @@ public class BookControllerAPITests {
                 .post(endpoint);
 
         // Válasz ellenőrzése
-        assertEquals(404, response.getStatusCode()); // Módosítsd a helyes státuszkódra
+        assertEquals(404, response.getStatusCode()); //
 
-        // További válasz ellenőrzések...
+
     }
 
 
