@@ -33,6 +33,8 @@ public class BookController {
         return "redirect:/books";
     }
 
+
+
     @GetMapping("/deleteBook/{id}")
     public String deleteBook(@PathVariable("id") long id) {
         repository.deleteById(id);

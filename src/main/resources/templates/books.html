@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="HU">
 <head>
   <title>Konyvtar</title>
   <style>
@@ -45,14 +45,20 @@
   </style>
 </head>
 <body>
-<h1>Jelenleg konyvek:</h1>
+
+<h1>Jelenlegi konyvek:</h1>
 <table>
   <tr>
+    <th>Kész</th>
     <th>Cim</th>
     <th>Szerzo</th>
     <th>Muvelet</th>
   </tr>
   <tr th:each="book : ${books}">
+    <td>
+      <input type="checkbox" th:id="${'bookCheckbox-' + book.id}" class="bookCheckbox">
+      <label th:for="${'bookCheckbox-' + book.id}"></label>
+    </td>
     <td th:text="${book.title}">Cim</td>
     <td th:text="${book.author}">Szerzo</td>
     <td>
@@ -61,5 +67,6 @@
   </tr>
 </table>
 <a href="/addBook">Konyv hozaadasa</a>
+
 </body>
 </html>

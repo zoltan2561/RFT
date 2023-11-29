@@ -34,4 +34,5 @@ jobs:
           mvn -B deploy --file pom.xml
 
         env:
+          BASE_URL: "http://localhost:8080/books" # vagy a GitHub Actions környezetében használt URL
           GITHUB_TOKEN: ${{ secrets.TOKEN }}

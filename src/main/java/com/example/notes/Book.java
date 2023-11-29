@@ -15,6 +15,7 @@ public class Book {
     private Long id;
     private String title;
     private String author;
+
     // Getters, Setters, Constructors
     public Long getId() {
         return id;

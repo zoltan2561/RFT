@@ -14,8 +14,13 @@ public class BookControllerTests {
 
     @BeforeAll
     public static void setUp() {
-        RestAssured.baseURI = "http://localhost:8080/books"; // Helyes API végpontot állíts be
+        String baseUrl = System.getenv("BASE_URL"); // Olvasd be a környezeti változót
+        if (baseUrl == null) {
+            baseUrl = "http://localhost:8080"; // Alapértelmezett érték, ha nincs környezeti változó beállítva
+        }
+        RestAssured.baseURI = baseUrl;
     }
+
 
 
     @Test
