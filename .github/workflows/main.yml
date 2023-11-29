@@ -35,7 +35,7 @@ jobs:
           echo "Setting artifact version to $version"
         
 
-      -
+
         env:
           BASE_URL: "http://localhost:8080/books" # vagy a GitHub Actions környezetében használt URL
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
