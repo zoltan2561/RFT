@@ -26,15 +26,17 @@ jobs:
       - name: Start Server
         run: mvn spring-boot:run &
       - name: Wait for Server to Start
-        run: sleep 30s
+        run: sleep 10s
       - name: Build and publish with Maven
         run: |
           # Versioning setup
           version_prefix=`mvn help:evaluate -Dexpression=project.version --quiet -DforceStdout --file pom.xml | awk -F. '{print $1"."$2}'`
           version="$version_prefix.${{github.run_number}}"
           echo "Setting artifact version to $version"
-          
 
+      - name: Start Server
+        run: mvn spring-boot:run &
+      -
         env:
           BASE_URL: "http://localhost:8080/books" # vagy a GitHub Actions környezetében használt URL
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
