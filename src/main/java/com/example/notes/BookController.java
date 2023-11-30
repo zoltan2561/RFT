@@ -20,7 +20,7 @@ public class BookController {
         model.addAttribute("books", repository.findAll());
         return "books"; // Thymeleaf template
     }
-
+//könyv hozzáadása
     @GetMapping("/addBook")
     public String addBookForm(Model model) {
         model.addAttribute("book", new Book());
@@ -34,7 +34,7 @@ public class BookController {
     }
 
 
-
+//könyv eltávolítása
     @GetMapping("/deleteBook/{id}")
     public String deleteBook(@PathVariable("id") long id) {
         repository.deleteById(id);

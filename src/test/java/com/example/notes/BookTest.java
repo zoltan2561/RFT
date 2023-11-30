@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BookTest {
+    //könyv címzése teszt
     @Test
     public void testBook() {
         Book book = new Book();

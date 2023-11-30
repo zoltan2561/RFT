@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class BooksApplication {
-//server start
+//szerver indítása
 	public static void main(String[] args) {
 		SpringApplication.run(BooksApplication.class, args);
 	}
