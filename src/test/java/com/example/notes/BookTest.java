@@ -23,3 +23,4 @@ public class BookTest {
         assertEquals("Author2", book2.getAuthor());
     }
 }
+//teszt
